@@ -36,7 +36,7 @@ router.post('/api/search', function(req,res){
   Loasjoin.find({ 
     boss : Number(req.body.boss),
     server : Number(req.body.server)
-  }).sort({'_id': -1}).limit(100).exec(function(err,userpost) {
+  }).sort({'_id': -1}).limit(50).exec(function(err,userpost) {
     if(err) throw res.json({result: err});;
     res.json({result: userpost});
   });
